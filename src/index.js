@@ -4,6 +4,29 @@ document.addEventListener('DOMContentLoaded', (event) => {
     console.log('DOM fully loaded');
   }); 
 
+  // Code for the login option
+
+  // Using DOM to access elements
+
+const loginForm = document.getElementById("login-form");
+const loginButton = document.getElementById("login-form-submit");
+const loginErrorMsg = document.getElementById("login-error-msg");
+
+// Button for form input
+
+loginButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    const username = loginForm.username.value;
+    const password = loginForm.password.value;
+
+    if (username === "user" && password === "web_dev") {
+        alert("You have successfully logged in.");
+        location.reload();
+    } else {
+        loginErrorMsg.style.opacity = 1;
+    }
+})
+
   // The key used to acquire the OpenWeatherApp API
 
 const apikey = "2491cc71cba0e545977b5a5da46a7573"
