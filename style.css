@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+    background-color: rgb(122, 122, 236);
+    font-family: Arial, Helvetica, sans-serif;
+}
+.holder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vh;
+    background: rgb(8, 160, 147);
+    background:radial-gradient(
+        circle,
+    rgba(2, 37, 77, 0.633) 0%,
+    rgba(16, 4, 119, 0.841) 35%,
+    rgb(18, 41, 145) 100%
+    );
+}
+.theweather {
+    display: flex;
+    margin: 15px 0;
+    align-items: center;
+    font-size: 1.5rem;
+}
+#userlocation {
+    font-style: italic;
+    font-size: 3rem;
+    font-weight: 700;
+}
+.description {
+    font-size: 1.35rem;
+    text-transform: capitalize;
+}
+.pointtwo {
+    background-color: black;
+    margin: 0 15px;
+    border-radius: 50px;
+    height: 15px;
+    width: 15px;
+}
