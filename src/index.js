@@ -6,10 +6,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   // Code for the login option
 
-  $(document).ready(function() {
+  (document).ready(function() {
     // Username input
 
-    $('#submit').click(function() {
+    ('#submit').click(function() {
 // prevent PageReLoad
         e.preventDefault(); 
 // User validate
@@ -18,13 +18,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
 var ValidPassword = $('#password').val() === 'hgm2015'; 
 // if ValidEmail & ValidPassword
         if (ValidEmail === true && ValidPassword === true) { 
-            $('.valid').css('display', 'block');
+            ('.valid').css('display', 'block');
             // go to home.html
             window.location = "http://arkev.com"; 
         }
         else {
             // show error msg
-            $('.error').css('display', 'block'); 
+            ('.error').css('display', 'block'); 
         }
     });
 }); 
@@ -132,3 +132,45 @@ window.addEventListener('load', () => {
     });
     }
 });
+
+
+// Feedback card code
+
+// Using DOM elements to create functionality
+const ratings = document.querySelectorAll('.rating')
+const ratingsContainer = document.querySelector('.ratings-container')
+const sendBtn = document.querySelector('#send')
+const panel = document.querySelector('#panel')
+let selectedRating = 'Satisfied'
+
+// Event Listener for the ratings option
+ratingsContainer.addEventListener('click', (e) => {
+    if(e.target.parentNode.classList.contains('rating')) {
+        removeActive()
+        e.target.parentNode.classList.add('active')
+        selectedRating = e.target.nextElementSibling.innerHTML
+    }
+    if(e.target.classList.contains('rating')) {
+        removeActive()
+        e.target.classList.add('active')
+        selectedRating = e.target.nextElementSibling.innerHTML
+    }
+
+})
+
+// Event listener for the send button
+sendBtn.addEventListener('click', (e) => {
+    panel.innerHTML = `
+        
+        Thank You!
+        
+        Feedback : ${selectedRating}
+        We'll use your feedback to improve our customer support
+    `
+})
+
+function removeActive() {
+    for(let i = 0; i < ratings.length; i++) {
+        ratings[i].classList.remove('active')
+    }
+}
