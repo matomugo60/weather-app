@@ -6,29 +6,25 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   // Code for the login option
 
-  (document).ready(function() {
-    // Username input
+  $(document).ready(function() {
+    //$('#username').focus();
 
-    ('#submit').click(function() {
-// prevent PageReLoad
-        e.preventDefault(); 
-// User validate
-       var ValidEmail = $('#username').val() === 'invitado'; 
-       // Password validate
-var ValidPassword = $('#password').val() === 'hgm2015'; 
-// if ValidEmail & ValidPassword
-        if (ValidEmail === true && ValidPassword === true) { 
-            ('.valid').css('display', 'block');
-            // go to home.html
-            window.location = "http://arkev.com"; 
+    $('#submit').click(function() {
+
+        e.preventDefault(); // prevent PageReLoad
+
+       var ValidEmail = $('#username').val() === 'invitado'; // User validate
+var ValidPassword = $('#password').val() === 'hgm2015'; // Password validate
+
+        if (ValidEmail === true && ValidPassword === true) { // if ValidEmail & ValidPassword
+            $('.valid').css('display', 'block');
+            window.location = "http://arkev.com"; // go to home.html
         }
         else {
-            // show error msg
-            ('.error').css('display', 'block'); 
+            $('.error').css('display', 'block'); // show error msg
         }
     });
-}); 
-
+});
 // Alternative code for login information
 /*
 const loginForm = document.getElementById("login-form");
