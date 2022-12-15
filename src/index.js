@@ -84,18 +84,18 @@ const temperatureFahrenheit = document.querySelector('.f');
 
 window.addEventListener('load', () => {
 
-    let longitude;
-    let latitude;
+    let long;
+    let lat;
 
     // To access the geographical location of the app user
 
-    if(navigator.geographicalLocation) {
-        navigator.geographicalLocation.getCurrentUserPosition((position) => {
+    if(navigator.geolocation) {
+        navigator.geolocation.getCurrentUserPosition((position) => {
             // Creating variables to store longitude and latitude data
-            longitude = position.coordinates.longitude;
-            latitude = position.coordinates.latitude;
+            long = position.coords.longitude;
+            lat = position.coords.latitude;
 
-            const baseData = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${api}&units=metric`;
+            const baseData = 'https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={2491cc71cba0e545977b5a5da46a7573}'
 
             // Using fetch to get the data from the API
 
@@ -107,7 +107,7 @@ window.addEventListener('load', () => {
         const { temp } = data.main;
         const place = data.name;
         const { description, icon } = data.weather[0];
-        const { sunrise, sunset } = data.time;
+        const { sunrise, sunset } = data.sys;
         // URL for the image icon to be displayed
         const imageIconUrl = `https://openweathermap.org/img/wn/${icon}@2x.png`;
 
