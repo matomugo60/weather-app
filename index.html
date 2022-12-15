@@ -19,21 +19,26 @@
             </div>
         </ul>
     </nav>
-    <div class="form-container">
-        <form class="form">
-            <input id="search" type="text" class="input" placeholder="search..."/>
-            <button id="clear" class="clear-results">clear</button>
-        </form>
-
-</div>
-
-
+    
     <h1>The Weather App
         <small class="text-muted">
             :View Current Weather
         </small>
     </h1>
-    <main id="main-holder">
+
+    <section class="form animated flipInX">
+        <h2>Login To Your Account</h2>
+        <!--<p class="valid">Valid. Please wait.</p> 
+        <p class="error">Error!. Please enter correct Username &amp; password.</p>-->
+        <form class="loginbox" autocomplete="off">
+          <input placeholder="Username" type="text" id="username"></input>
+          <input placeholder="Password" type="password" id="password"></input>
+      <button id="submit">Login</button>
+      </form>
+      </section>
+
+<!--Alternative code for login-->
+   <!-- <main id="main-holder">
         <h1 id="login-header">Login To Account</h1>
         
         <div id="login-error-msg-holder">
@@ -49,8 +54,18 @@
           <input type="submit" value="Login" id="login-form-submit">
         </form>
       
-      </main>
+      </main> -->
 
+      <h3>Search weather conditions of other countries</h3>
+      <input type = "text" id = "searchBar" oninput = "Search((this.value).toLowerCase())" placeholder = "Search...">
+      <br><br>
+      <ul>
+          <li class = "listItem">Kenya</li>
+          <li class = "listItem">Uganda</li>
+          <li class = "listItem">Tanzania</li>
+          <li class = "listItem">Rwanda</li>
+      </ul>
+    
     <div class="holder">
          <img src="" alt="" src="" id="weather-image">
          <div id="userlocation">

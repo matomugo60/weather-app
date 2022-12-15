@@ -6,8 +6,31 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   // Code for the login option
 
-  // Using DOM to access elements
+  $(document).ready(function() {
+    // Username input
 
+    $('#submit').click(function() {
+// prevent PageReLoad
+        e.preventDefault(); 
+// User validate
+       var ValidEmail = $('#username').val() === 'invitado'; 
+       // Password validate
+var ValidPassword = $('#password').val() === 'hgm2015'; 
+// if ValidEmail & ValidPassword
+        if (ValidEmail === true && ValidPassword === true) { 
+            $('.valid').css('display', 'block');
+            // go to home.html
+            window.location = "http://arkev.com"; 
+        }
+        else {
+            // show error msg
+            $('.error').css('display', 'block'); 
+        }
+    });
+}); 
+
+// Alternative code for login information
+/*
 const loginForm = document.getElementById("login-form");
 const loginButton = document.getElementById("login-form-submit");
 const loginErrorMsg = document.getElementById("login-error-msg");
@@ -26,6 +49,21 @@ loginButton.addEventListener("click", (e) => {
         loginErrorMsg.style.opacity = 1;
     }
 })
+*/
+
+// Search bar code
+
+function Search(item){
+    var collection = document.getElementsByClassName("listItem");
+    for (i = 0;i < collection.length; i++){
+        if (((collection[i].innerHTML).toLowerCase()).indexOf(item) > -1) {
+            collection[i].style.display = "block";
+            } else {
+                collection[i].style.display = "none";
+                }
+    }
+}
+
 
   // The key used to acquire the OpenWeatherApp API
 
