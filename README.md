@@ -67,6 +67,8 @@ Or
 
 You can click on this link (  ) to have it open in your web browser.
 
+Please allow the application to use your device's location so as to display your location's weather forecast
+
       
 # Author & Licence
 
