@@ -65,7 +65,7 @@ To run the application in the web browser, you can open the index.html file prov
 
 Or
 
-You can click on this link (  ) to have it open in your web browser.
+You can click on this link ( https://matomugo60.github.io/weather-app/ ) to have it open in your web browser.
 
 Please allow the application to use your device's location so as to display your location's weather forecast
 
