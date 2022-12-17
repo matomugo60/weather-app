@@ -160,6 +160,7 @@ li {
     outline: none;
   }
 
+  /* Weather app */
   .weather {
     display: flex; 
     align-items: center;
@@ -247,7 +248,7 @@ li {
 }
 */
 
-
+/* Reaction card */
 .panel-container {
   background-color: #12192c;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -333,3 +334,13 @@ li {
   .credit {
       text-align: center;
   }
+
+  /* Comment box*/
+
+#comment-box, #post {
+  border: none;
+  border-radius: 5px;
+}
+#post:hover{
+  background-color: deeppink;
+}

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="bootstrap.css" />
 </head>
 <body>
+    <!--Navigation menu-->
     <nav class="navbar">
         <div class="logo">Weather</div>
         <ul class="nav-links">
@@ -19,14 +20,14 @@
             </div>
         </ul>
     </nav>
-    
+    <!--Introductory message-->
     <h1>The Weather App
         <small class="text-muted">
             :View Current Weather
         </small>
     </h1>
-
-    <section class="form animated flipInX">
+<!-- Login form-->
+   <section class="form animated flipInX">
         <h2>Login To Your Account</h2>
         <!--<p class="valid">Valid. Please wait.</p> 
         <p class="error">Error!. Please enter correct Username &amp; password.</p>-->
@@ -35,10 +36,10 @@
           <input placeholder="Password" type="password" id="password"></input>
       <button id="submit">Login</button>
       </form>
-      </section>
+      </section> 
 
 <!--Alternative code for login-->
-   <!-- <main id="main-holder">
+    <!--<main id="main-holder">
         <h1 id="login-header">Login To Account</h1>
         
         <div id="login-error-msg-holder">
@@ -56,18 +57,19 @@
       
       </main> -->
 
-      <h3>Search weather conditions of other countries</h3>
+      <!--Search section-->
+      <h3>Search weather conditions of other cities/towns</h3>
       <form>
       <input type = "text" id = "searchBar" oninput = "Search((this.value).toLowerCase())" placeholder = "Search...">
       </form>
       <br><br>
       <ul>
-          <li class = "listItem">Kenya</li>
-          <li class = "listItem">Uganda</li>
-          <li class = "listItem">Tanzania</li>
-          <li class = "listItem">Rwanda</li>
+          <li class = "listItem">Meru</li>
+          <li class = "listItem">Mombasa</li>
+          <li class = "listItem">Nairobi</li>
+          <li class = "listItem">Nakuru</li>
       </ul>
-    
+   <!--Weather app--> 
 <div class="container">
     <img src="" alt="" srcset="" id="weather-icon">
     <div id="location">
@@ -99,9 +101,15 @@
     </div>
 
 </div>
-
-
-
+<!--Comment section-->
+<h5>Comment on your day</h5>
+<form>
+<input type="text" id="comment-box" placeholder="Enter comment">
+</form>
+<button id="post">Post</button>
+<ul id="unordered">
+</ul>
+<!--Reaction card-->
     <div id="panel" class="panel-container">
         <strong>How satisfied are you with our <br /> weather app?</strong>
         <div class="ratings-container">

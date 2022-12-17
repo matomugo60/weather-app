@@ -63,80 +63,11 @@ function Search(item){
                 }
     }
 }
-/*
 
-  // The key used to acquire the OpenWeatherApp API
-
-const apikey = "2491cc71cba0e545977b5a5da46a7573"
-
-// Accessing the DOM elements and changing the variables.
-
-const iconImage = document.getElementById('weather-image');
-const description = document.querySelector('.description');
-const locationUser = document.querySelector('#userlocation');
-const sunrise = document.querySelector('.sunriseinfo');
-const sunset = document.querySelector('.sunsetinfo');
-const temperatureCelcius = document.querySelector('.c');
-const temperatureFahrenheit = document.querySelector('.f');
-
-
-// Ann event listener that loades every time the page loades
-
-window.addEventListener('load', () => {
-
-    let long;
-    let lat;
-
-    // To access the geographical location of the app user
-
-    if(navigator.geolocation) {
-        navigator.geolocation.getCurrentUserPosition((position) => {
-            // Creating variables to store longitude and latitude data
-            long = position.coords.longitude;
-            lat = position.coords.latitude;
-
-            const baseData = 'https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={2491cc71cba0e545977b5a5da46a7573}'
-
-            // Using fetch to get the data from the API
-
-            fetch (baseData)
-            .then ((response) => {
-                return response.json()
-            })
-            .then ((data) => {
-        const { temp } = data.main;
-        const place = data.name;
-        const { description, icon } = data.weather[0];
-        const { sunrise, sunset } = data.sys;
-        // URL for the image icon to be displayed
-        const imageIconUrl = `https://openweathermap.org/img/wn/${icon}@2x.png`;
-
-        // Formula used to convert the temperature from celcius to fahrenheit
-        const fahrenheit = (temp * 9) / 5 + 32;
-
-        // Converting the time and date data into East Africa Time (EAT)
-        const sunriseEAT = new Date(sunrise * 1000);
-        const sunsetEAT = new Date(sunset * 1000);
-
-        // Using the DOM to display the data Fetched
-
-        iconImage.src = imageIconUrl
-        description.textContent = `${description}`;
-        locationUser.textContent = `${place}`;
-        sunrise.textContent = `${sunriseEAT.toLocaleDateString()}, ${sunriseEAT.toLocaleTimeString()}`;
-        sunset.textContent = `${sunsetEAT.toLocaleDateString()}, ${sunsetEAT.toLocaleTimeString()}`;
-        temperatureCelcius.textContent = `${temp.toFixed(2)} °C`;
-        temperatureFahrenheit.textContent = `${fahrenheit.toFixed(2)} °F`;
-
-        });
-    });
-    }
-});
-*/
-
+// The key used to acquire the OpenWeatherApp API
 const api = '2491cc71cba0e545977b5a5da46a7573'
 
-// Openweathermap API. Do not share it publicly.
+// Accessing the DOM elements and changing the variables.
 
 const iconImg = document.getElementById('weather-icon');
 const loc = document.querySelector('#location');
@@ -146,18 +77,25 @@ const desc = document.querySelector('.desc');
 const sunriseDOM = document.querySelector('.sunrise');
 const sunsetDOM = document.querySelector('.sunset');
 
+// Event listener that loades every time the page loades
+
 window.addEventListener('load', () => {
   let long;
   let lat;
-  // Accesing Geolocation of User
+
+   // To access the geographical location of the app user
+
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition((position) => {
-      // Storing Longitude and Latitude in variables
+
+      // Creating variables to store longitude and latitude data
+
       long = position.coords.longitude;
       lat = position.coords.latitude;
       const base = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${api}&units=metric`;
 
       // Using fetch to get data
+
       fetch(base)
         .then((response) => {
           return response.json();
@@ -171,11 +109,13 @@ window.addEventListener('load', () => {
           const iconUrl = `https://openweathermap.org/img/wn/${icon}@2x.png`;
           const fahrenheit = (temp * 9) / 5 + 32;
 
-          // Converting Epoch(Unix) time to GMT
+          // Converting time to GMT
+
           const sunriseGMT = new Date(sunrise * 1000);
           const sunsetGMT = new Date(sunset * 1000);
 
           // Interacting with DOM to show data
+
           iconImg.src = iconUrl;
           loc.textContent = `${place}`;
           desc.textContent = `${description}`;
@@ -186,6 +126,19 @@ window.addEventListener('load', () => {
         });
     });
   }
+});
+
+// Comment section code
+
+let post= document.getElementById("post");
+post.addEventListener("click", function(){
+    let commentBoxValue= document.getElementById("comment-box").value;
+ 
+    let li = document.createElement("li");
+    let text = document.createTextNode(commentBoxValue);
+    li.appendChild(text);
+    document.getElementById("unordered").appendChild(li);
+ 
 });
 
 // Feedback card code
